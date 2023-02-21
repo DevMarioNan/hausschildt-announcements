@@ -19,7 +19,7 @@ const Navbar = ({user}) => {
                     <button className='bg-blue-500 rounded-lg text-white px-7 py-2'> sign in</button>
                 </Link>
                 }
-                {location.pathname !== '/signin' && user &&
+                {location.pathname !== '/create' && user &&
                 <Link to="/create">
                     <button className='bg-blue-500 rounded-lg text-white px-7 py-2' > Create</button>
                 </Link>

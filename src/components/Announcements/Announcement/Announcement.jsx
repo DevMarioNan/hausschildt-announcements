@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const Announcement = ({title, desc , time}) => {
     return (
         <div className='w-full border-2 shadow-sm rounded-md my-4 p-3 hover:shadow-md transition-shadow'>

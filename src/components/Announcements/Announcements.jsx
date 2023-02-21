@@ -1,5 +1,7 @@
 import React from 'react'
 import Announcement from './Announcement/Announcement'
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from '../../utils/firebase';
 
 const Announcements = () => {
 
