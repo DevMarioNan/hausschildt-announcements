@@ -7,7 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const Create = ({user}) => {
+const Create = ({user,theme}) => {
     
     const navigate = useNavigate();
     useEffect(() => {
@@ -21,6 +21,7 @@ const Create = ({user}) => {
     
     const handleForm = (e) => {
         e.preventDefault();
+        if(title && description){
             setDoc(doc(db, "announcements", title), {
                 title: title,
                 description: description,
@@ -30,19 +31,23 @@ const Create = ({user}) => {
             }).catch((error) => {
                 toast.success("successfully created");
             });
+        }else{
+            toast.error("please fill all the fields");
+        }
         
     }
 
     return (
         <div className='mt-20'>
-            <h1 className='text-2xl font-bold text-center pb-10'>Create a new Announcement</h1>  
+            <h1 className='text-2xl font-bold text-center pb-10 dark:text-white transition'>Create a new Announcement</h1>  
             <form onSubmit={(e)=>handleForm(e)} className="flex flex-col justify-center gap-10">
-                <input type="text" placeholder="title" className='border shadow-sm w-[70%] mx-auto px-5 py-3 ' onChange={(e)=>setTitle(e.target.value)}/>
-                <textarea placeholder="description" className='border shadow-sm w-[70%] mx-auto px-5 py-3 ' onChange={(e)=>setDescription(e.target.value)}/>
+                <input type="text" placeholder="title" className='border shadow-sm w-[70%] mx-auto px-5 py-3 dark:text-white dark:bg-gray-800 dark:focus:shadow-[1px_1px_15px_2px_#22d3ee] transition' onChange={(e)=>setTitle(e.target.value)}/>
+                <textarea placeholder="description" className='border shadow-sm w-[70%] mx-auto px-5 py-3 dark:text-white dark:bg-gray-800 dark:focus:shadow-[1px_1px_15px_2px_#22d3ee] transition' onChange={(e)=>setDescription(e.target.value)}/>
                 <button type='submit' className='bg-blue-500 text-white px-5 py-3 rounded-lg mx-auto'>Create</button>
             </form>
             <ToastContainer 
                 position="bottom-center"
+                theme={theme}
                 />
         </div>
     )
