@@ -7,6 +7,7 @@ import Create from '../Create/Create'
 
 
 
+
 const Home = () => {
     const [user,setUser] = useState(null);
     
@@ -16,7 +17,7 @@ const Home = () => {
         <div>
             <Navbar user={user} />
             <Routes>
-                <Route path="/" element={<Announcements />} />
+                <Route path="/" element={<Announcements  />} />
                 <Route path="/signin" element={<Signin setUser={setUser} />} />
                 <Route path="/create" element={<Create user={user} />} />
             </Routes>

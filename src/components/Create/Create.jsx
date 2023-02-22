@@ -1,10 +1,11 @@
 import React,{useState,useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
 import { db } from '../../utils/firebase';
-import {doc , setDoc} from 'firebase/firestore';
+import {doc , setDoc,serverTimestamp} from 'firebase/firestore';
 import moment from 'moment/moment';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 
 const Create = ({user}) => {
     
@@ -23,7 +24,7 @@ const Create = ({user}) => {
             setDoc(doc(db, "announcements", title), {
                 title: title,
                 description: description,
-                createdAt: moment().format('MMMM Do YYYY, h:mm:ss a'),
+                createdAt: serverTimestamp()
             }).then(() => {
                 toast.success("Document successfully written!");
             }).catch((error) => {
