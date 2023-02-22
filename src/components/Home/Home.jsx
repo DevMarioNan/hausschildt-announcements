@@ -10,7 +10,7 @@ import getCookie from '../../hooks/getCookie';
 
 const Home = () => {
     const [user,setUser] = useState(getCookie('user'));
-    const [theme,setTheme] = useState('dark');
+    const [theme,setTheme] = useState('light');
     
 
     return (
