@@ -6,7 +6,7 @@ import {Routes , Route} from 'react-router-dom'
 import Create from '../Create/Create'
 import getCookie from '../../hooks/getCookie';
 import setCookie from '../../hooks/setCookies';
-
+import Footer from '../footer/Footer'
 
 const Home = () => {
     const [user,setUser] = useState(getCookie('user'));
@@ -21,6 +21,7 @@ const Home = () => {
                 <Route path="/signin" element={<Signin setUser={setUser} theme={theme}/>} />
                 <Route path="/create" element={<Create user={user} theme={theme}/>} />
             </Routes>
+            <Footer />
         </div>
     )
 }
