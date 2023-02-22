@@ -39,7 +39,7 @@ const Create = ({user,theme}) => {
 
     return (
         <div className='mt-20'>
-            <h1 className='text-2xl font-bold text-center pb-10 dark:text-white transition'>Create a new Announcement</h1>  
+            <h1 className='text-3xl font-bold text-center pb-10 dark:text-white transition'>Create a new Announcement</h1>  
             <form onSubmit={(e)=>handleForm(e)} className="flex flex-col justify-center gap-10">
                 <input type="text" placeholder="title" className='border shadow-sm w-[70%] mx-auto px-5 py-3 dark:text-white dark:bg-gray-800 dark:focus:shadow-[1px_1px_15px_2px_#22d3ee] transition' onChange={(e)=>setTitle(e.target.value)}/>
                 <textarea placeholder="description" className='border shadow-sm w-[70%] mx-auto px-5 py-3 dark:text-white dark:bg-gray-800 dark:focus:shadow-[1px_1px_15px_2px_#22d3ee] transition' onChange={(e)=>setDescription(e.target.value)}/>

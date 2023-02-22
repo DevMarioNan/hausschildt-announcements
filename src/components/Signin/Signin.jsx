@@ -39,10 +39,10 @@ const Signin = ({setUser,theme}) => {
         <div className='container mx-auto px-5  mt-52 transition'> 
             <div className=' border-black dark:border-white border rounded-lg py-5 sm:w-4/6 md:w-4/6 lg:w-3/6 xl:w-2/6 mx-auto transition'>
 
-            <h1 className='text-2xl font-bold text-center pb-10 dark:text-white transition'>Signin</h1>            
+            <h1 className='text-3xl font-bold text-center pb-10 dark:text-white transition'>Signin</h1>            
                 <form className='flex flex-col gap-10 ' onSubmit={(e)=>handleForm(e)}>
-                    <input type="email" placeholder="email" className='border shadow-sm w-[90%] mx-auto px-5 py-3 dark:bg-gray-800 dark:text-white dark:focus:shadow-[1px_1px_15px_2px_#22d3ee] transition ' onChange={(e)=>setEmail(e.target.value)} />
-                    <input type="password" placeholder="password" className='border shadow-sm w-[90%] mx-auto px-5 py-3 dark:bg-gray-800 dark:text-white dark:focus:shadow-[1px_1px_15px_2px_#22d3ee] transition' onChange={(e)=>setPassword(e.target.value)}/>
+                    <input type="email" placeholder="email" className='border shadow-sm w-[90%] mx-auto focus:shadow-lg px-5 py-3 dark:bg-gray-800 dark:text-white dark:focus:shadow-[1px_1px_15px_2px_#22d3ee] transition ' onChange={(e)=>setEmail(e.target.value)} />
+                    <input type="password" placeholder="password" className='border shadow-sm w-[90%] mx-auto focus:shadow-lg px-5 py-3 dark:bg-gray-800 dark:text-white dark:focus:shadow-[1px_1px_15px_2px_#22d3ee] transition' onChange={(e)=>setPassword(e.target.value)}/>
                     <button className='bg-blue-500 text-white px-5 py-3 rounded-lg mx-auto'>Signin</button>
                 </form> 
             </div>
