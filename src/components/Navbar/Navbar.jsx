@@ -31,7 +31,7 @@ const Navbar = ({user,theme,setTheme}) => {
 
 
     return (
-        <div className='py-5 border dark:border-black shadow-md dark:shadow-lg dark:shadow-cyan-400 bg-white dark:bg-black transition'>
+        <div className='py-5 border dark:border-black shadow-md dark:shadow-[0px_2px_20px_2px] dark:shadow-cyan-400 bg-white dark:bg-black transition'>
             <nav className='flex mx-auto container justify-between items-center px-5'>
                 <Link to ="/">
                     <h1 className="text-xl md:text-3xl font-bold text-black dark:text-white transition">HAUSCHIILDT</h1>
