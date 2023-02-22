@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {CiDark,CiLight} from "react-icons/ci";
-
+import setCookie from '../../hooks/setCookies';
 
 const Navbar = ({user,theme,setTheme}) => {
     const location = useLocation();
@@ -15,9 +15,11 @@ const Navbar = ({user,theme,setTheme}) => {
         if(theme === 'dark'){
             document.documentElement.classList.add('dark');
             setIcon(<CiLight/>);
+            setCookie('theme','dark');
         }else{
             document.documentElement.classList.remove('dark');
             setIcon(<CiDark/>);
+            setCookie('theme','light');
         }
     }, [theme])
 

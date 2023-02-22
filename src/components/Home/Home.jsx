@@ -5,12 +5,12 @@ import Announcements from '../Announcements/Announcements'
 import {Routes , Route} from 'react-router-dom'
 import Create from '../Create/Create'
 import getCookie from '../../hooks/getCookie';
-
+import setCookie from '../../hooks/setCookies';
 
 
 const Home = () => {
     const [user,setUser] = useState(getCookie('user'));
-    const [theme,setTheme] = useState('light');
+    const [theme,setTheme] = useState(getCookie('theme') ?  getCookie('theme') : 'light');
     
 
     return (
